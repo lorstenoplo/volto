@@ -36,9 +36,7 @@ with open(
 ) as package_json:
     data = package_json.read()
 
-version_from_package_json = json.loads(data)["version"]
-
-if version_from_package_json:
+if version_from_package_json := json.loads(data)["version"]:
     # The short X.Y version.
     version = version_from_package_json
     # The full version, including alpha/beta/rc tags.
